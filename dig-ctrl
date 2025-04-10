@@ -1,0 +1,26 @@
+#include<cstdio>
+#include<bitset>
+using namespace std;
+bitset<7> ans;
+char map[]={'B','A','F','G','C','D','E'};
+char inpt[10];
+int pst(char a)
+{
+    for (int i = 0; i < 7; i++)
+    {
+        if(map[i]==a)
+        {
+            return i;
+        }
+    }
+}
+int main()
+{
+    scanf("%s",inpt);
+    for (int i = 0; inpt[i]!=0 ; i++)
+    {
+        ans[6-pst(inpt[i])]=1;
+    }
+    printf("%lu\n",ans.to_ulong());
+    return 0;
+}

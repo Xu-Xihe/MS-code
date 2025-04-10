@@ -1,24 +1,23 @@
-#include "DigitalOut.h"
-#include "PinNames.h"
 #include "mbed.h"
+#include "mbed_thread.h"
 
+#define time 2000
 int main()
 {
-    DigitalOut A(D5,1),B(D3,0),G(D10,0);
+    DigitalOut A(D5),B(D3),G(D9);
     while (true) {
-        A=1;
-        wait_us(500);
-        /*
+        G=1;
+        thread_sleep_for(time);
         G=0;
         A=0;
         B=0;
-        wait_us(500);
+        thread_sleep_for(time);
         A=1;
-        wait_us(500);
+        thread_sleep_for(time);
         B=1;
-        wait_us(500);
+        thread_sleep_for(time);
         A=0;
-        wait_us(500);*/
+        thread_sleep_for(time);
     }
 }
 
